@@ -1,0 +1,13 @@
+.insetButton{
+    padding: 10px 30px;
+    margin-left: 2px;
+}
+.inputFields input{
+    border: 2px solid #6477cd;
+    padding: 5px;
+    border-radius: 5px;
+}
+.detailsFont{
+    font-size: 13px;
+}
+.active_row {color: green; height: 300px;}
