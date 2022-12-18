@@ -21,7 +21,7 @@ const Marking = () => {
     setMark(newAddData);
   };
   const handleSaveMark = () => {
-    fetch("https://infinite-citadel-70182.herokuapp.com/mark", {
+    fetch("https://rubric-marking.up.railway.app/mark", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -37,7 +37,7 @@ const Marking = () => {
     setdependMark(true);
   };
   useEffect(() => {
-    fetch("https://infinite-citadel-70182.herokuapp.com/mark")
+    fetch("https://rubric-marking.up.railway.app/mark")
       .then((res) => res.json())
       .then((data) => setMarkCollection(data));
   }, [dependMark]);
@@ -51,7 +51,7 @@ const Marking = () => {
   };
   const handleSaveCriteria = (e) => {
     e.preventDefault();
-    fetch("https://infinite-citadel-70182.herokuapp.com/criteria", {
+    fetch("https://rubric-marking.up.railway.app/criteria", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -67,7 +67,7 @@ const Marking = () => {
     setdependCiteria(true);
   };
   useEffect(() => {
-    fetch("https://infinite-citadel-70182.herokuapp.com/cieria")
+    fetch("https://rubric-marking.up.railway.app/cieria")
       .then((res) => res.json())
       .then((data) => setciteriaCollection(data));
   }, [dependCiteria]);
@@ -82,7 +82,7 @@ const Marking = () => {
   const handleSaveRubic = (e) => {
     e.preventDefault();
     console.log(rubric);
-    fetch("https://infinite-citadel-70182.herokuapp.com/rubric", {
+    fetch("https://rubric-marking.up.railway.app/rubric", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -98,7 +98,7 @@ const Marking = () => {
     setdependRubric(true);
   };
   useEffect(() => {
-    fetch("https://infinite-citadel-70182.herokuapp.com/rubric")
+    fetch("https://rubric-marking.up.railway.app/rubric")
       .then((res) => res.json())
       .then((data) => setRubricCollection(data));
   }, [dependRubric]);

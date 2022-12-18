@@ -4,14 +4,14 @@ import Navbar from "../Share/Navbar/Navbar";
 const ManageRubric = () => {
   const [rubricCollection, setRubricCollection] = useState([]);
   useEffect(() => {
-    fetch("https://infinite-citadel-70182.herokuapp.com/rubric")
+    fetch("https://rubric-marking.up.railway.app/rubric")
       .then((res) => res.json())
       .then((data) => setRubricCollection(data));
   }, []);
   const handleDeleterubric = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://infinite-citadel-70182.herokuapp.com/rubric/${id}`;
+      const url = `https://rubric-marking.up.railway.app/rubric/${id}`;
       fetch(url, {
         method: "DELETE",
       })

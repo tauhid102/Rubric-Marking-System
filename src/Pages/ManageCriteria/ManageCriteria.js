@@ -4,7 +4,7 @@ import Navbar from '../Share/Navbar/Navbar';
 const ManageCriteria = () => {
     const [marksCriteria, setCriteriaCollection] = useState([]);
   useEffect(() => {
-    fetch("https://infinite-citadel-70182.herokuapp.com/cieria")
+    fetch("https://rubric-marking.up.railway.app/cieria")
       .then((res) => res.json())
       .then((data) => setCriteriaCollection(data));
   }, []);
@@ -12,7 +12,7 @@ const ManageCriteria = () => {
   const handleDeleteCriteria = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://infinite-citadel-70182.herokuapp.com/criteria/${id}`;
+      const url = `https://rubric-marking.up.railway.app/criteria/${id}`;
       fetch(url, {
         method: "DELETE",
       })

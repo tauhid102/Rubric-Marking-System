@@ -6,14 +6,14 @@ import Navbar from "../Share/Navbar/Navbar";
 const ManageMark = () => {
   const [marksCollection, setMarksCollection] = useState([]);
   useEffect(() => {
-    fetch("https://infinite-citadel-70182.herokuapp.com/mark")
+    fetch("https://rubric-marking.up.railway.app/mark")
       .then((res) => res.json())
       .then((data) => setMarksCollection(data));
   }, []);
   const handleDeleteMark = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://infinite-citadel-70182.herokuapp.com/marks/${id}`;
+      const url = `https://rubric-marking.up.railway.app/marks/${id}`;
       fetch(url, {
         method: "DELETE",
       })

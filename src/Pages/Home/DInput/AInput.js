@@ -9,7 +9,7 @@ const AInput = () => {
     console.log("InputFields", inputFields);
     const marks = [...inputFields];
 
-    fetch("https://infinite-citadel-70182.herokuapp.com/marks", {
+    fetch("https://rubric-marking.up.railway.app/marks", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -19,7 +19,7 @@ const AInput = () => {
   };
   const handleUpdate =(id)=>{
     const ids = { id };
-            const url = `https://infinite-citadel-70182.herokuapp.com/marks`;
+            const url = `https://rubric-marking.up.railway.app/marks`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -37,7 +37,7 @@ const AInput = () => {
   const handleLoadData = () => {
     setDataValues(true);
     setRowValues(false)
-    fetch("https://infinite-citadel-70182.herokuapp.com/load")
+    fetch("https://rubric-marking.up.railway.app/load")
       .then((res) => res.json())
       .then((data) => setInputFields(data));
   };
@@ -59,7 +59,7 @@ const AInput = () => {
     // console.log(index);
     // values.splice(index, 1);
     // setInputFields(values);
-    const uri = `https://infinite-citadel-70182.herokuapp.com/marks/${id}`;
+    const uri = `https://rubric-marking.up.railway.app/marks/${id}`;
     fetch(uri, {
       method: "DELETE",
     })

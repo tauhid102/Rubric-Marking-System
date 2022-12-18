@@ -12,31 +12,31 @@ const MarksGiven = () => {
   const [markDependence, setMarkDependence] = useState(false);
   //students
   useEffect(() => {
-    fetch("https://infinite-citadel-70182.herokuapp.com/students")
+    fetch("https://rubric-marking.up.railway.app/students")
       .then((res) => res.json())
       .then((data) => setSudents(data));
   }, []);
   //marks
   useEffect(() => {
-    fetch("https://infinite-citadel-70182.herokuapp.com/mark")
+    fetch("https://rubric-marking.up.railway.app/mark")
       .then((res) => res.json())
       .then((data) => setMarkCollection(data));
   }, []);
   //citeria
   useEffect(() => {
-    fetch("https://infinite-citadel-70182.herokuapp.com/cieria")
+    fetch("https://rubric-marking.up.railway.app/cieria")
       .then((res) => res.json())
       .then((data) => setciteriaCollection(data));
   }, []);
   //rubric
   useEffect(() => {
-    fetch("https://infinite-citadel-70182.herokuapp.com/rubric")
+    fetch("https://rubric-marking.up.railway.app/rubric")
       .then((res) => res.json())
       .then((data) => setRubricCollection(data));
   }, []);
   //students marks collection
   useEffect(() => {
-    fetch("https://infinite-citadel-70182.herokuapp.com/studentsMarks")
+    fetch("https://rubric-marking.up.railway.app/studentsMarks")
       .then((res) => res.json())
       .then((data) => setstudentsMarksCollection(data));
   }, [markDependence]);
@@ -75,9 +75,10 @@ const MarksGiven = () => {
       setMark([...mark, newObject]);
     }
   };
+  //save
   const handleSaveMarks = () => {
     let object = { ...mark };
-    fetch("https://infinite-citadel-70182.herokuapp.com/studentMarks", {
+    fetch("https://rubric-marking.up.railway.app/studentMarks", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -95,7 +96,7 @@ const MarksGiven = () => {
   const handleStudentMarks = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://infinite-citadel-70182.herokuapp.com/studentMarks/${id}`;
+      const url = `https://rubric-marking.up.railway.app/studentMarks/${id}`;
       fetch(url, {
         method: "DELETE",
       })
